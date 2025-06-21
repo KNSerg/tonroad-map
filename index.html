@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TonRoad MiniApp - Карта</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map { height: 100%; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDomq3rCcdNiDkQXsaKqG3DEBduKdCdCV8&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            const center = { lat: 48.137154, lng: 11.576124 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: center,
+            });
+
+            const marker = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: "Hello from TonRoad!",
+            });
+        }
+    </script>
+</body>
+</html>
